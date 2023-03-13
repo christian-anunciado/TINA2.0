@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@tailwind base;
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 4px solid #909090;
+  background-clip: padding-box;
+  background-color: #909090;
+  border-radius: 16px;
+}
+
+.scroll-stable {
+  scrollbar-gutter: stable;
+}
+
+@tailwind components;
+@tailwind utilities;
