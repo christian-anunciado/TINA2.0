@@ -10,14 +10,18 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 
 const Header = () => (
   <div className="flex flex-col items-center gap-2 text-3xl font-bold uppercase">
-    <img src={TINA} alt="" className="h-[250px] w-[250px]" />
+    <img
+      src={TINA}
+      alt=""
+      className="pointer-events-none h-[250px] w-[250px]"
+    />
     Teknoy INquiry Assistant (TINA)
   </div>
 );
 
 const Info = ({ text }: { text: string }) => (
   <div className="flex w-[240px] flex-col items-center justify-start gap-4">
-    <div className="w-[240px] whitespace-normal rounded-xl bg-darkDivider py-3 px-4 text-center text-sm font-medium dark:bg-darkSoft">
+    <div className="w-[240px] whitespace-normal rounded-lg bg-soft py-3 px-4 text-center text-sm font-medium text-darkSoft dark:bg-darkSoft dark:text-darkText">
       {text}
     </div>
   </div>
