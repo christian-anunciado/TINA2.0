@@ -44,6 +44,7 @@ module.exports = {
 
       // Primary
       red: '#791b1b',
+      gold: '#E4C988'
 
 
     },

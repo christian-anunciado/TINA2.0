@@ -7,7 +7,7 @@ type Props = {};
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-full flex-1 bg-bgLighter px-3 dark:bg-darkBgLighter">
+    <div className="h-full flex-[1] bg-bgLighter px-3 dark:bg-darkBgLighter">
       {children}
     </div>
   );
