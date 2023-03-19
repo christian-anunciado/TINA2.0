@@ -1,5 +1,5 @@
 # TINA 2.0.
-Teknoy Inquiry Assistant also known as TINA is the Cebu Institute of Technology university's chatbot that answers all the questions raised by the students or the inquirers.
+Teknoy Inquiry Assistant (TINA) is an AI-powered chatbot designed to provide quick and reliable answers to inquiries raised by students and other inquirers at the Cebu Institute of Technology University. TINA is available 24/7 and can assist with a wide range of queries, including those related to admissions, enrollment, academic programs, campus facilities, and more. With TINA, users can easily get the information they need in a matter of seconds, without the need to wait in long lines or navigate complex websites. TINA is a valuable resource for students and staff alike, providing a convenient and efficient way to access important information about the university.
 
 ## Prerequisite
 - Node
