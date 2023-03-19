@@ -1,32 +1,26 @@
-import React from "react";
-import { MdOutlineQuestionAnswer } from "react-icons/md";
+import { BsQuestionCircle } from "react-icons/bs";
 
 type Props = {
   question: string;
 };
 
 const QuestionText = ({ question }: Props) => (
-  <div className="flex h-[46px] w-[244px] cursor-pointer items-center gap-3 rounded-lg pl-2 pr-2 hover:bg-soft dark:hover:bg-darkSoft">
+  <div className="flex w-full cursor-pointer items-center gap-3 rounded-lg py-3 pl-2 pr-2 hover:bg-soft dark:hover:bg-darkSoft">
     <div>
-      <MdOutlineQuestionAnswer size={"1em"} />
+      <BsQuestionCircle size={"0.9em"} />
     </div>
-    <div className="overflow-hidden overflow-ellipsis whitespace-nowrap text-sm">
-      {question}
+    <div className="flex min-w-0">
+      <span className="prose text-sm dark:text-darkTextSoft md:text-[13px]">
+        {question}
+      </span>
     </div>
   </div>
 );
 
 function Question({ question }: Props) {
   return (
-    <div className="group relative">
+    <div className="group relative mr-1.5">
       <QuestionText question={question} />
-      {question.length > 32 && (
-        <div>
-          <span className="invisible absolute top-full left-1/4 z-20 mx-auto mt-2 overflow-visible whitespace-nowrap rounded-md bg-divider p-2 text-xs opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 dark:bg-darkDivider">
-            {question}
-          </span>
-        </div>
-      )}
     </div>
   );
 }

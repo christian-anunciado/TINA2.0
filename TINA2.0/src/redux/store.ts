@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import convoRedux from "./convoRedux";
 import themeRedux from "./themeRedux";
 
 const persistConfig = {
@@ -19,9 +20,10 @@ const persistConfig = {
 };
 
 const themeReducer = persistReducer(persistConfig, themeRedux);
+const convoReducer = persistReducer(persistConfig, convoRedux);
 
 export const store = configureStore({
-  reducer: { theme: themeReducer },
+  reducer: { theme: themeReducer, conversation: convoReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

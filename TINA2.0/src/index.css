@@ -18,5 +18,11 @@
   scrollbar-gutter: stable;
 }
 
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
