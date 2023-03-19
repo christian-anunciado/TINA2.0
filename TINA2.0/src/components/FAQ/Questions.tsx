@@ -12,13 +12,14 @@ function Questions({}: Props) {
     "What documents do I need to submit for enrollment, such as transcripts or immunization records?",
     "What is the cost of enrollment?",
     "What kind of financial aid or scholarships are available?",
+    "What is the enrollment capacity for each year level?",
     "What is the enrollment capacity for each grade level?",
   ];
   return (
-    <div className="scroll-stable min-h-0 flex-1 basis-auto overflow-hidden hover:overflow-y-auto">
+    <div className="scroll-stable min-h-0 w-full flex-[2] overflow-hidden overflow-x-hidden hover:overflow-y-auto">
       <div className="flex flex-col gap-1">
         {sampleQuestions.map((question) => (
-          <Question question={question} />
+          <Question question={question} key={question} />
         ))}
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Input from "../Input/Input";
 import Introduction from "../Introduction/Introduction";
 import Responses from "../Responses/Responses";
@@ -6,10 +7,16 @@ import Responses from "../Responses/Responses";
 type Props = {};
 
 function Main({}: Props) {
+  const conversation = useSelector((state: any) => state.conversation);
+  const count = conversation.count;
+
   return (
     <div className="relative flex h-full flex-[7] flex-col bg-red text-white dark:bg-darkBgLight">
-      {/* <Introduction /> */}
-      <Responses />
+      {count === 0 ? (
+        <Introduction />
+      ) : (
+        <Responses messages={conversation.messages} />
+      )}
       <Input />
     </div>
   );

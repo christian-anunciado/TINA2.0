@@ -44,12 +44,14 @@ module.exports = {
 
       // Primary
       red: '#791b1b',
-      gold: '#E4C988'
+      gold: '#e7ae4d',
+      goldLight: '#E4C988',
 
 
     },
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/typography'),
   ],
 }
