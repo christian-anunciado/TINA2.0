@@ -9,7 +9,6 @@ type Props = {
 
 const QuestionText = ({ question }: Props) => {
   const query = useContext(queryContext);
-  console.log(query.query);
 
   const loading = useSelector((state: any) => state.conversation.loading);
 

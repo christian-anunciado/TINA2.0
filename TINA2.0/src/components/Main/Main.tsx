@@ -11,7 +11,7 @@ function Main({}: Props) {
   const count = conversation.count;
 
   return (
-    <div className="relative flex h-full flex-[7] flex-col bg-red text-white dark:bg-darkBgLight">
+    <div className="relative flex h-full flex-[7] flex-col bg-redLight text-white dark:bg-darkBgLight">
       {count === 0 ? (
         <Introduction />
       ) : (

@@ -8,6 +8,7 @@ interface Message {
   text: string;
   type: MessageType;
   created: Date;
+  error?: boolean;
 }
 
 type Props = {
@@ -26,14 +27,20 @@ function Responses({ messages }: Props) {
 
   return (
     <div
-      className="flex min-h-0 flex-[4] flex-col items-center gap-1 overflow-auto"
+      className="flex min-h-0 flex-[4] snap-y flex-col items-center gap-1 overflow-auto scroll-smooth"
       ref={ref}
     >
-      {messages.map((message) => {
+      {messages.map((message, index) => {
         if (message.type === MessageType.Query)
-          return <Query query={message.text} />;
+          return <Query query={message.text} key={index} />;
         if (message.type === MessageType.Response)
-          return <Response response={message.text} />;
+          return (
+            <Response
+              response={message.text}
+              key={index}
+              error={message.error}
+            />
+          );
       })}
     </div>
   );

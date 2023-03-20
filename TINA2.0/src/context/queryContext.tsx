@@ -31,10 +31,6 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
     null
   );
   const conversation = useSelector((state: any) => state.conversation);
-  console.log(
-    "🚀 ~ file: queryContext.tsx:34 ~ QueryProvider ~ conversation:",
-    conversation
-  );
 
   const dispatch = useDispatch();
 
@@ -56,10 +52,6 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const handleQuery = async (query: string) => {
-    console.log(
-      "🚀 ~ file: queryContext.tsx:34 ~ QueryProvider ~ conversation:",
-      conversation
-    );
     if (query.length === 0) return;
     initQuery(query);
     try {
@@ -87,6 +79,7 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
           text: "Sorry, something went wrong. Please try again later.",
           created: new Date().toUTCString(),
           type: MessageType.Response,
+          error: true,
         })
       );
     }

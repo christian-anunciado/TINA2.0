@@ -16,7 +16,7 @@ function Questions({}: Props) {
     "What is the enrollment capacity for each grade level?",
   ];
   return (
-    <div className="scroll-stable min-h-0 w-full flex-[2] overflow-hidden overflow-x-hidden hover:overflow-y-auto">
+    <div className="scroll-stable min-h-0 w-full flex-[2] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto">
       <div className="flex flex-col gap-1">
         {sampleQuestions.map((question) => (
           <Question question={question} key={question} />

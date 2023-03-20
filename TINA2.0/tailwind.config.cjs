@@ -51,6 +51,9 @@ module.exports = {
 
       // Primary
       red: '#791b1b',
+      // redLight: '#A84448',
+      // redLight: '#771b1a',
+      redLight: '#8a343b',
       gold: '#e7ae4d',
       goldLight: '#E4C988',
 
