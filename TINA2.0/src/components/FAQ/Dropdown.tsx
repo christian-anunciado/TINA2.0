@@ -32,12 +32,12 @@ function Dropdown({ options, handler, selected, disabled }: Props) {
   };
   return (
     <div
-      className={`relative flex flex-col ${
+      className={`relative flex w-[95%] flex-col ${
         disabled && "pointer-events-none opacity-50"
       }`}
     >
       <button
-        className="flex h-[46px] w-[244px] items-center justify-between rounded-xl border border-darkTextSoft px-4 text-sm font-medium dark:hover:bg-darkSoft"
+        className="flex h-[46px] items-center justify-between rounded-xl border border-darkTextSoft px-4 text-sm font-medium dark:hover:bg-darkSoft"
         onClick={() => setIsOpen(!isOpen)}
         ref={containerRef}
       >

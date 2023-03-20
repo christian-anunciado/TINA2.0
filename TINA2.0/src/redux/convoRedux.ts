@@ -11,6 +11,7 @@ export interface MessageState {
   text: string;
   type: MessageType;
   created: Date;
+  error?: boolean;
 }
 
 type ConvoState = {

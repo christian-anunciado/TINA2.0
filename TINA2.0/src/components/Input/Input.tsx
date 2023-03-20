@@ -35,7 +35,8 @@ const InputQuery = ({}: Props) => {
   }, [loading]);
 
   const requestResponse = async (query: string) => {
-    context.handleQuery(query);
+    const req = await context.handleQuery(query);
+    console.log("🚀 ~ file: Input.tsx:39 ~ requestResponse ~ req:", req);
 
     setQuery("");
   };
