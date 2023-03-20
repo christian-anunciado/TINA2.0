@@ -9,6 +9,13 @@ fontFamily['sans'] = [
   'system-ui',
   // <-- you may provide more font fallbacks here
 ];
+fontFamily['text'] = [
+  'Noto Sans',
+  'Roboto', // <-- Roboto is a default sans font now
+  'Open Sans',
+  'sans-serif',
+  'system-ui',
+]
 
 module.exports = {
   content: [

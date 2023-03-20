@@ -17,13 +17,16 @@ type Props = {};
 type Settings = {
   name: string;
   icon: React.ReactElement;
+  disabled?: boolean;
   onClick?: () => void;
 };
 
-const SettingsItem = ({ name, icon, onClick }: Settings) => {
+const SettingsItem = ({ name, icon, onClick, disabled }: Settings) => {
   return (
     <div
-      className="flex h-[46px] w-full cursor-pointer items-center gap-3 rounded-lg pl-2 pr-3 text-sm hover:bg-soft dark:hover:bg-darkSoft md:text-[13px]"
+      className={`flex h-[46px] w-full cursor-pointer items-center gap-3 rounded-lg pl-2 pr-3 text-sm hover:bg-soft dark:hover:bg-darkSoft md:text-[13px] ${
+        disabled && "pointer-events-none opacity-50"
+      }`}
       onClick={() => onClick?.()}
     >
       <div>{icon}</div>
@@ -60,10 +63,12 @@ function Settings({}: Props) {
         <SettingsItem
           name="Report any issues here"
           icon={<MdOutlineBugReport size={"1.2em"} />}
+          disabled={true}
         />
         <SettingsItem
           name="Got any Recommendations?"
           icon={<MdOutlineArrowOutward size={"1.2em"} />}
+          disabled={true}
         />
         <SettingsItem
           name="Clear Chat"
