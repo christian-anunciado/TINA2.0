@@ -9,7 +9,7 @@ import TINA from "../../assets/avatars/tinaAvatarTransparent.png";
 
 type Props = {
   response: string;
-  error?: boolean | false;
+  error?: boolean;
 };
 
 const parseStringToLink = (input: string) => {
@@ -23,7 +23,6 @@ const parseStringToLink = (input: string) => {
 };
 
 function Response({ response, error }: Props) {
-  console.log("🚀 ~ file: Response.tsx:26 ~ Response ~ error:", error);
   const parsedResponse = parseStringToLink(response);
   const loading = response === "";
   return (
