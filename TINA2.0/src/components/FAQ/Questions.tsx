@@ -5,15 +5,20 @@ type Props = {};
 
 function Questions({}: Props) {
   const sampleQuestions = [
-    "What is the enrollment process?",
-    "When is the enrollment period?",
-    "What are the requirements for enrollment, such as age or residency?",
-    "How do I apply for enrollment and what is the timeline?",
-    "What documents do I need to submit for enrollment, such as transcripts or immunization records?",
-    "What is the cost of enrollment?",
-    "What kind of financial aid or scholarships are available?",
-    "What is the enrollment capacity for each year level?",
-    "What is the enrollment capacity for each grade level?",
+    "How can I check my grades?",
+    "How can I get a student ID card?",
+    "How can I get a copy of my study load?",
+    "How can I view my tuition fee breakdown?",
+    "How can I pay my tuition fee?",
+    "How can I get a refund for an overpayment?",
+    "How can I apply for financial aid or scholarships at CIT?",
+    "What is the Enrollment Technical Office (ETO)?",
+    "What services does ETO provide?",
+    "How can I apply for admission to CIT?",
+    "How do I register for classes at CIT?",
+    "How can I get in touch with ETO?",
+    "What are the office hours of ETO?",
+    "What are the requirements for admission to CIT?",
   ];
   return (
     <div className="scroll-stable min-h-0 w-full flex-[2] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto">
