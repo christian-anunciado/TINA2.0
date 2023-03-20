@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdSend } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import generate_response from "../../api/response";
-import {
-  appendMessage,
-  appendResponse,
-  MessageType,
-} from "../../redux/convoRedux";
+import { queryContext } from "../../context/queryContext";
 
 type Props = {};
 
@@ -31,80 +25,39 @@ const Loading = () => (
 );
 
 const InputQuery = ({}: Props) => {
-  const convo = useSelector((state: any) => state.conversation);
-  const loading = convo.loading;
-  const dispatch = useDispatch();
-
   const [query, setQuery] = useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const loading = useSelector((state: any) => state.conversation.loading);
+  const context = useContext(queryContext);
 
   useEffect(() => {
     !loading && inputRef.current?.focus();
   }, [loading]);
 
-  const initQuery = () => {
-    setQuery("");
-    dispatch(
-      appendMessage({
-        text: query,
-        created: new Date().toUTCString(),
-        type: MessageType.Query,
-      })
-    );
-    dispatch(
-      appendMessage({
-        text: "",
-        created: new Date().toUTCString(),
-        type: MessageType.Response,
-      })
-    );
-  };
-
-  const handleQuery = async () => {
-    if (query.length === 0) return;
-    initQuery();
-    try {
-      const req = await generate_response.get("/response/ask_tina", {
-        params: {
-          question: query,
-        },
-        timeout: 15000,
-        timeoutErrorMessage: "Request timed out",
-      });
-
-      console.log(req.data);
-
-      dispatch(
-        appendResponse({
-          text: req.data.text,
-          created: new Date().toUTCString(),
-          type: MessageType.Response,
-        })
-      );
-    } catch (error) {
-      console.log("🚀 ~ file: Input.tsx:82 ~ handleQuery ~ error:", error);
-      dispatch(
-        appendResponse({
-          text: "Sorry, something went wrong. Please try again later.",
-          created: new Date().toUTCString(),
-          type: MessageType.Response,
-        })
-      );
-    }
+  const requestResponse = async (query: string) => {
+    context.handleQuery(query);
 
     setQuery("");
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") handleQuery();
+    if (e.key === "Enter") {
+      requestResponse(query);
+    }
   };
 
   return (
-    <div className="flex w-[50%] items-center justify-between rounded-lg bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg dark:bg-darkSoft dark:text-darkText">
+    <div
+      className={`flex w-[50%] items-center justify-between rounded-lg bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg dark:bg-darkSoft dark:text-darkText ${
+        loading && "cursor-not-allowed"
+      }`}
+    >
       <input
         type="text"
         placeholder="Ask your questions here..."
-        className="w-full bg-transparent focus:outline-none focus:ring-0"
+        className={`w-full bg-transparent focus:outline-none focus:ring-0 ${
+          loading && "cursor-not-allowed"
+        }`}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
@@ -114,7 +67,7 @@ const InputQuery = ({}: Props) => {
       />
       {!loading ? (
         <MdSend
-          onClick={handleQuery}
+          onClick={() => requestResponse(query)}
           className="cursor-pointer hover:scale-110"
         />
       ) : (

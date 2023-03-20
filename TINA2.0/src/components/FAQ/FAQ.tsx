@@ -35,7 +35,12 @@ function FAQ({}: Props) {
   return (
     <Wrapper>
       <Header />
-      <Dropdown options={options} selected={selected} handler={setSelected} />
+      <Dropdown
+        options={options}
+        selected={selected}
+        handler={setSelected}
+        disabled={true}
+      />
     </Wrapper>
   );
 }

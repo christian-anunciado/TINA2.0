@@ -6,6 +6,7 @@ type Props = {
   options: string[];
   handler: Dispatch<SetStateAction<string>>;
   selected: string;
+  disabled?: boolean;
 };
 
 type OptionProps = {
@@ -19,7 +20,7 @@ type DropdownProps = {
   selected: string;
 };
 
-function Dropdown({ options, handler, selected }: Props) {
+function Dropdown({ options, handler, selected, disabled }: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
   const containerRef = React.useRef<HTMLButtonElement>(null);
   const dropDownRef = React.useRef<HTMLDivElement>(null);
@@ -30,7 +31,11 @@ function Dropdown({ options, handler, selected }: Props) {
     setIsOpen(false);
   };
   return (
-    <div className="relative flex flex-col">
+    <div
+      className={`relative flex flex-col ${
+        disabled && "pointer-events-none opacity-50"
+      }`}
+    >
       <button
         className="flex h-[46px] w-[244px] items-center justify-between rounded-xl border border-darkTextSoft px-4 text-sm font-medium dark:hover:bg-darkSoft"
         onClick={() => setIsOpen(!isOpen)}

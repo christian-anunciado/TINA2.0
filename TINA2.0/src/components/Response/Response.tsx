@@ -26,11 +26,11 @@ function Response({ response }: Props) {
           loading ? "gap-4" : "gap-6"
         } whitespace-pre-wrap pt-6 pb-10 text-base md:text-sm`}
       >
-        <img src={TINA} alt="" className="h-9 w-9 -scale-x-100" />
+        <img src={TINA} alt="" className="h-8 w-8 -scale-x-100" />
         {loading ? (
           <span className="inline-block h-4 w-3 animate-[cursor-blink_1.25s_steps(2)_infinite] bg-darkBgLighter dark:bg-divider"></span>
         ) : (
-          <div className="text prose break-words py-1 text-darkBgLight dark:text-[#D1D5DB]">
+          <div className="prose break-words py-1 text-base text-darkBgLight dark:text-[#D1D5DB]">
             {response}
           </div>
         )}
