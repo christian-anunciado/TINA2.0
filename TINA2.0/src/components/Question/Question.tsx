@@ -14,7 +14,7 @@ const QuestionText = ({ question }: Props) => {
 
   return (
     <div
-      className={`flex w-full cursor-pointer items-center gap-3 rounded-lg py-3 pl-3 pr-2 hover:bg-soft dark:hover:bg-darkSoft ${
+      className={`flex w-full cursor-pointer items-center gap-3 rounded-lg py-3 pl-3 pr-2 hover:bg-white dark:hover:bg-darkSoft ${
         loading && "pointer-events-none cursor-not-allowed opacity-50"
       }`}
       onClick={() => query.handleQuery(question)}
