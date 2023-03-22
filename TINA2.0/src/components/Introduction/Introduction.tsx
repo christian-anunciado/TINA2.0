@@ -9,7 +9,7 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex h-full min-h-0 flex-col items-center justify-center gap-4 overflow-y-auto">
+  <div className="flex min-h-screen flex-col items-center justify-center gap-4 overflow-y-auto">
     {children}
   </div>
 );
