@@ -79,7 +79,7 @@ const InputQuery = ({}: Props) => {
 };
 
 const SubText = ({}) => (
-  <div className="m-auto mb-8 px-4 text-center text-xs text-darkTextSoft md:text-[10px] lg:text-xs">
+  <div className="m-auto mb-8 px-8 text-center text-xs text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
     Please report any incorrect responses. Your feedback is valuable to me as it
     helps me improve my responses and provide better assistance in the future.
     Thank you!
