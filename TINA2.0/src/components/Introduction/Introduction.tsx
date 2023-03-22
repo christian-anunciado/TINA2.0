@@ -21,14 +21,14 @@ const Header = () => (
 
 const Info = ({ text }: { text: string }) => (
   <div className="flex w-[240px] flex-col items-center justify-start gap-4">
-    <div className="w-[240px] whitespace-normal rounded-lg bg-soft py-3 px-4 text-center text-sm font-medium text-darkSoft dark:bg-darkSoft dark:text-darkText md:text-[13px]">
+    <div className="prose w-[240px] whitespace-normal rounded-lg bg-soft py-3 px-4 text-center text-sm font-medium text-darkSoft dark:bg-darkSoft dark:text-darkText md:text-[13px]">
       {text}
     </div>
   </div>
 );
 
 const Infos = ({ infos }: { infos: string[] }) => (
-  <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,240px))] justify-center gap-4">
+  <div className="grid justify-center gap-4 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
     {infos.map((info) => (
       <Info text={info} key={info} />
     ))}
