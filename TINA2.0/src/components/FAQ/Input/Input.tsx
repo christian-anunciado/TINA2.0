@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MdSend } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { queryContext } from "../../context/queryContext";
+import { queryContext } from "../../../context/queryContext";
 
 type Props = {};
 
@@ -36,7 +36,6 @@ const InputQuery = ({}: Props) => {
 
   const requestResponse = async (query: string) => {
     const req = await context.handleQuery(query);
-    console.log("🚀 ~ file: Input.tsx:39 ~ requestResponse ~ req:", req);
 
     setQuery("");
   };
@@ -79,7 +78,7 @@ const InputQuery = ({}: Props) => {
 };
 
 const SubText = ({}) => (
-  <div className="m-auto mb-8 px-8 text-center text-xs text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
+  <div className="mb-2 block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
     Please report any incorrect responses. Your feedback is valuable to me as it
     helps me improve my responses and provide better assistance in the future.
     Thank you!
@@ -88,10 +87,13 @@ const SubText = ({}) => (
 
 function Input({}: Props) {
   return (
-    <div className="flex w-full flex-1 shrink-0 items-stretch md:h-48">
-      <div className="absolute bottom-0 m-auto flex w-full flex-col items-center justify-center gap-4">
-        <InputQuery />
-        <SubText />
+    <div className="relative w-full flex-1">
+      <div className="absolute bottom-0 h-full w-full">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+          <div className="w-full py-3"></div>
+          <InputQuery />
+          <SubText />
+        </div>
       </div>
     </div>
   );

@@ -48,5 +48,9 @@
   font-weight: 600;
 }
 
+.select-none {
+  user-select: none;
+}
+
 @tailwind components;
 @tailwind utilities;

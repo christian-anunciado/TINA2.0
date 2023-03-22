@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Input from "../Input/Input";
+import Input from "../FAQ/Input/Input";
 import Introduction from "../Introduction/Introduction";
 import Responses from "../Responses/Responses";
 

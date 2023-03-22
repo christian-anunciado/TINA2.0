@@ -2,18 +2,24 @@ import React from "react";
 import TINA from "../../assets/avatars/tinaAvatarTransparent.png";
 type Props = {};
 
+const Container = ({ children }: { children: React.ReactNode }) => (
+  <div className="scroll-stable min-h-0 w-full flex-[5] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto">
+    {children}
+  </div>
+);
+
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex h-[80%] flex-col items-center justify-center gap-6">
+  <div className="flex h-full min-h-0 flex-col items-center justify-center gap-4 overflow-y-auto">
     {children}
   </div>
 );
 
 const Header = () => (
-  <div className="flex flex-col items-center gap-2 text-center text-3xl font-bold uppercase md:text-2xl">
+  <div className="flex flex-col items-center gap-2 text-center text-2xl font-bold uppercase lg:text-3xl">
     <img
       src={TINA}
       alt=""
-      className="pointer-events-none h-[250px] w-[250px] md:h-[200px] md:w-[200px]"
+      className="pointer-events-none h-[150px] w-[150px] md:h-[200px] md:w-[200px] xl:h-[250px] xl:w-[250px]"
     />
     Teknoy INquiry Assistant (TINA)
   </div>
@@ -49,11 +55,13 @@ function Introduction({}: Props) {
     `I'm always learning and improving, so if I don't know the answer to your question, I'll do my best to find it for you.`,
   ];
   return (
-    <Wrapper>
-      <Header />
-      <Infos infos={infos} />
-      <Example />
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <Header />
+        <Infos infos={infos} />
+        <Example />
+      </Wrapper>
+    </Container>
   );
 }
 
