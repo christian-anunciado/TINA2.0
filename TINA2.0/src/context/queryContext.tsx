@@ -63,8 +63,6 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
         timeoutErrorMessage: "Request timed out",
       });
 
-      console.log(req.data);
-
       dispatch(
         appendResponse({
           text: req.data.text,
@@ -73,7 +71,6 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
         })
       );
     } catch (error) {
-      console.log("🚀 ~ file: Input.tsx:82 ~ handleQuery ~ error:", error);
       dispatch(
         appendResponse({
           text: "Sorry, something went wrong. Please try again later.",

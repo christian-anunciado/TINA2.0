@@ -56,8 +56,8 @@ const ToggleDarkMode = () => {
 function Settings({}: Props) {
   const dispatch = useDispatch();
   return (
-    <div className="w-full">
-      <div className="flex grow flex-col gap-2 text-sm">
+    <div className="min-h-0 w-full flex-1 md:overflow-hidden md:hover:overflow-y-auto lg:flex-[2]">
+      <div className="flex flex-col gap-2 text-sm md:mr-1">
         <ToggleDarkMode />
 
         <SettingsItem

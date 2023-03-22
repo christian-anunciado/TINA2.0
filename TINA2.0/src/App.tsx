@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
+import TopMenu from "./components/TopMenu/TopMenu";
 
 type ChildrenProps = {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ const ThemeHandler = ({ children }: ChildrenProps) => {
 function App() {
   return (
     <ThemeHandler>
+      <TopMenu />
       <Container>
         <Menu />
         <Main />

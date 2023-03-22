@@ -1,13 +1,5 @@
-import {
-  MdError,
-  MdErrorOutline,
-  MdOutlineErrorOutline,
-  MdReportGmailerrorred,
-} from "react-icons/md";
-import { useSelector } from "react-redux";
+import { MdErrorOutline } from "react-icons/md";
 import TINA from "../../assets/avatars/tinaAvatarTransparent.png";
-import Linkify from "react-linkify";
-import ReactLinkify from "react-linkify";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -34,7 +26,7 @@ function Response({ response, error }: Props) {
           loading ? "items-center" : null
         } ${
           loading ? "gap-4" : "gap-6"
-        } justify-center whitespace-pre-wrap pt-6 pb-10 text-base md:text-sm`}
+        } justify-center whitespace-pre-wrap pt-6 pb-10 text-sm md:text-base`}
       >
         {error && (
           <div className="relative flex h-8 shrink-0 justify-start">
