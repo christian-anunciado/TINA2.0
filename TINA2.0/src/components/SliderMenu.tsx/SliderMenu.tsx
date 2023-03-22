@@ -22,7 +22,7 @@ function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
       data-headlessui-state="open"
     >
       <div className="fixed inset-0 bg-textSoft bg-opacity-75 opacity-100">
-        <div className="fixed inset-0 z-40 flex">
+        <div className="fixed inset-0 z-50 flex">
           <div className="relative flex w-full max-w-sm flex-1 translate-x-0 flex-col bg-gradient-to-b from-white to-goldLight dark:bg-gradient-to-b dark:from-darkSoft dark:to-darkBgLighter md:max-w-md">
             <div
               className="absolute top-0 right-0 -mr-10 pt-2 opacity-100 md:-mr-12"
