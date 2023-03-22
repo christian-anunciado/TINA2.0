@@ -49,7 +49,7 @@ const InputQuery = ({}: Props) => {
 
   return (
     <div
-      className={`flex w-[50%] items-center justify-between rounded-lg bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg dark:bg-darkSoft dark:text-darkText ${
+      className={`flex w-[75%] items-center justify-between rounded-lg bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg dark:bg-darkSoft dark:text-darkText md:w-[65%] xl:w-[50%] ${
         loading && "cursor-not-allowed"
       }`}
     >
@@ -79,7 +79,7 @@ const InputQuery = ({}: Props) => {
 };
 
 const SubText = ({}) => (
-  <div className="mb-8 text-center text-xs text-darkTextSoft md:text-[10px] lg:text-xs">
+  <div className="m-auto mb-8 px-4 text-center text-xs text-darkTextSoft md:text-[10px] lg:text-xs">
     Please report any incorrect responses. Your feedback is valuable to me as it
     helps me improve my responses and provide better assistance in the future.
     Thank you!

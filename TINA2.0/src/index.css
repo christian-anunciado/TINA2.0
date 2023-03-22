@@ -25,5 +25,28 @@
   }
 }
 
+.markdown ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1rem;
+}
+
+.markdown ol li {
+  padding-right: 1rem;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+.markdown p {
+  margin-bottom: 0;
+}
+
+.markdown a {
+  color: blue;
+}
+
+.markdown a:hover {
+  font-weight: 600;
+}
+
 @tailwind components;
 @tailwind utilities;
