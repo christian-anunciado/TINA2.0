@@ -31,10 +31,21 @@ const ToggleDarkMode = () => {
 };
 
 const HamburgerMenu = ({ setToggleMenu, toggleMenu }: HamburgerMenuProps) => {
+  const setHidden = () => {
+    console.log(document.body.style.overflow);
+    if (document.body.style.overflow !== "hidden") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  };
   return (
     <div
       className={`flex cursor-pointer items-center justify-center rounded-lg px-2 py-0.5 hover:bg-darkTextSoft hover:text-darkBgLight dark:hover:bg-darkSoft dark:hover:text-darkText`}
-      onClick={() => setToggleMenu(!toggleMenu)}
+      onClick={() => {
+        setToggleMenu(!toggleMenu);
+        setHidden();
+      }}
     >
       <MdMenu size={"1.5em"} />
     </div>
@@ -42,7 +53,7 @@ const HamburgerMenu = ({ setToggleMenu, toggleMenu }: HamburgerMenuProps) => {
 };
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div className="sticky top-0 z-30 h-[45px] w-full flex-none border-b border-b-divider bg-red text-white drop-shadow-md dark:border-b-darkTextSoft dark:bg-darkBgLighter dark:text-white md:hidden">
+  <div className="fixed top-0 z-30 h-[45px] w-full flex-none border-b border-b-divider bg-red text-white drop-shadow-md dark:border-b-darkTextSoft dark:bg-darkBgLighter dark:text-white md:hidden">
     {children}
   </div>
 );

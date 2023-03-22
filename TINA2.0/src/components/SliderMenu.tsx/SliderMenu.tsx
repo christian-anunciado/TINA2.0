@@ -27,6 +27,8 @@ function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
             <div
               className="absolute top-0 right-0 -mr-10 pt-2 opacity-100 md:-mr-12"
               onClick={() => setToggleMenu(!toggleMenu)}
+              id="headlessui-dialog-panel-:r2:"
+              data-headlessui-state="open"
             >
               <button
                 type="button"
