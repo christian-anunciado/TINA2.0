@@ -4,9 +4,11 @@
 @tailwind base;
 
 body {
-  min-height: 100vh;
-  padding: 0;
+  //position: fixed;
+  height: 100vh;
+  height: -webkit-fill-available;
   margin: 0;
+  padding: 0;
 }
 
 *::-webkit-scrollbar {
