@@ -38,11 +38,6 @@ const InputQuery = ({}: Props) => {
     queryRef.current = query;
   }, [loading, query]);
 
-  useEffect(() => {
-    // scrollIntoView inputRef
-    inputRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
   const requestResponse = async (query: string) => {
     const req = await context.handleQuery(query);
 
