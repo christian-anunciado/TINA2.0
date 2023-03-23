@@ -64,13 +64,6 @@ function Responses({ messages }: Props) {
             />
           );
       })}
-      <Response response={test} />
-      <Response response={test} />
-      <Response response={test} />
-      <Response response={test} />
-      <Response response={test} />
-      <Response response={test} />
-      <Response response={test} />
     </div>
   );
 }
