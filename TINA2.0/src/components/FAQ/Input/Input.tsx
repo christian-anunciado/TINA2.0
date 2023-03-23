@@ -26,13 +26,17 @@ const Loading = () => (
 
 const InputQuery = ({}: Props) => {
   const [query, setQuery] = useState("");
+  const queryRef = React.useRef<string>("");
   const inputRef = React.useRef<HTMLInputElement>(null);
   const loading = useSelector((state: any) => state.conversation.loading);
   const context = useContext(queryContext);
 
   useEffect(() => {
-    !loading && inputRef.current?.focus();
-  }, [loading]);
+    if (queryRef.current !== query) {
+      !loading && inputRef.current?.focus();
+    }
+    queryRef.current = query;
+  }, [loading, query]);
 
   useEffect(() => {
     // scrollIntoView inputRef
@@ -83,7 +87,7 @@ const InputQuery = ({}: Props) => {
 };
 
 const SubText = ({}) => (
-  <div className="mb-2 block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
+  <div className="block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
     Please report any incorrect responses. Your feedback is valuable to me as it
     helps me improve my responses and provide better assistance in the future.
     Thank you!
@@ -95,7 +99,7 @@ function Input({}: Props) {
     <div className="relative w-full flex-1">
       <div className="absolute bottom-0 h-full w-full">
         <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-          <div className="w-full py-3"></div>
+          <div className="w-full py-2.5"></div>
           <InputQuery />
           <SubText />
         </div>

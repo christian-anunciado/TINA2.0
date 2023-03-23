@@ -3,13 +3,13 @@ import TINA from "../../assets/avatars/tinaAvatarTransparent.png";
 type Props = {};
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="scroll-stable min-h-0 w-full flex-[5] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto">
+  <div className="scroll-stable w-full flex-[5] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto lg:hover:overflow-hidden">
     {children}
   </div>
 );
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex min-h-screen flex-col items-center justify-center gap-4 overflow-y-auto">
+  <div className="flex h-screen flex-col items-center justify-center gap-4">
     {children}
   </div>
 );
