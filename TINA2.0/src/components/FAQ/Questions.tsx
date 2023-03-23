@@ -21,7 +21,7 @@ function Questions({}: Props) {
     "What are the requirements for admission to CIT?",
   ];
   return (
-    <div className="scroll-stable min-h-0 w-full flex-[5] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto">
+    <div className="scroll-stable min-h-0 w-full flex-[5] overflow-y-auto overflow-x-hidden scroll-smooth lg:overflow-hidden lg:hover:overflow-y-auto">
       <div className="flex flex-col gap-1">
         {sampleQuestions.map((question) => (
           <Question question={question} key={question} />

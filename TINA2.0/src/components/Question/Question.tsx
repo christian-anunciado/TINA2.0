@@ -33,7 +33,7 @@ const QuestionText = ({ question }: Props) => {
 
 function Question({ question }: Props) {
   return (
-    <div className="group relative mr-1.5">
+    <div className="group relative mr-1.5 select-none">
       <QuestionText question={question} />
     </div>
   );

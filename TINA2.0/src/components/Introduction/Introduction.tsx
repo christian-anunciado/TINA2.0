@@ -3,7 +3,7 @@ import TINA from "../../assets/avatars/tinaAvatarTransparent.png";
 type Props = {};
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="scroll-stable w-full flex-[5] overflow-hidden overflow-x-hidden scroll-smooth hover:overflow-y-auto lg:hover:overflow-hidden">
+  <div className="scroll-stable w-full flex-[5] touch-pan-y overflow-hidden overflow-y-auto overflow-x-hidden scroll-smooth lg:overflow-hidden">
     {children}
   </div>
 );
@@ -15,7 +15,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Header = () => (
-  <div className="flex flex-col items-center gap-2 text-center text-2xl font-bold uppercase lg:text-3xl">
+  <div className="flex flex-col items-center gap-2 px-2 text-center text-2xl font-bold uppercase lg:text-3xl">
     <img
       src={TINA}
       alt=""
