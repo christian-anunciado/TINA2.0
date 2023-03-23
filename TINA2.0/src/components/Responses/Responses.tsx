@@ -49,7 +49,7 @@ function Responses({ messages }: Props) {
 
   return (
     <div
-      className="flex min-h-0 flex-[4] snap-y flex-col items-center gap-1 overflow-auto scroll-smooth"
+      className="flex min-h-0 flex-[4] touch-pan-y snap-y flex-col items-center gap-1 overflow-auto scroll-smooth"
       ref={ref}
     >
       {messages.map((message, index) => {
