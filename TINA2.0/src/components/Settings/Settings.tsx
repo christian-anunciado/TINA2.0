@@ -40,7 +40,7 @@ const ToggleDarkMode = () => {
   const dispatch = useDispatch();
   return (
     <div
-      className={`flex h-[46px] w-full cursor-pointer items-center gap-3 rounded-lg pl-2 pr-3 text-sm hover:bg-soft dark:hover:bg-darkSoft dark:hover:text-darkText md:text-[13px]`}
+      className={`hidden h-[46px] w-full cursor-pointer items-center gap-3 rounded-lg pl-2 pr-3 text-sm hover:bg-soft dark:hover:bg-darkSoft dark:hover:text-darkText md:flex md:text-[13px]`}
       onClick={() => dispatch(toggleDarkMode())}
     >
       {theme.darkMode ? (
@@ -56,27 +56,27 @@ const ToggleDarkMode = () => {
 function Settings({}: Props) {
   const dispatch = useDispatch();
   return (
-    <div className="min-h-0 w-full flex-[1] overflow-hidden hover:overflow-y-auto lg:flex-[2]">
-      <div className="flex flex-col gap-2 text-sm md:mr-1">
-        <ToggleDarkMode />
+    // <div className="w-full flex-1 overflow-hidden hover:overflow-y-auto lg:flex-[2]">
+    <div className="flex w-full flex-col gap-2 text-sm md:mr-1">
+      <ToggleDarkMode />
 
-        <SettingsItem
-          name="Report any issues here"
-          icon={<MdOutlineBugReport size={"1.2em"} />}
-          disabled={true}
-        />
-        <SettingsItem
-          name="Got any Recommendations?"
-          icon={<MdOutlineArrowOutward size={"1.2em"} />}
-          disabled={true}
-        />
-        <SettingsItem
-          name="Clear Chat"
-          icon={<BiTrash size={"1.2em"} />}
-          onClick={() => dispatch(clearMessages())}
-        />
-      </div>
+      <SettingsItem
+        name="Report any issues here"
+        icon={<MdOutlineBugReport size={"1.2em"} />}
+        disabled={true}
+      />
+      <SettingsItem
+        name="Got any Recommendations?"
+        icon={<MdOutlineArrowOutward size={"1.2em"} />}
+        disabled={true}
+      />
+      <SettingsItem
+        name="Clear Chat"
+        icon={<BiTrash size={"1.2em"} />}
+        onClick={() => dispatch(clearMessages())}
+      />
     </div>
+    // </div>
   );
 }
 

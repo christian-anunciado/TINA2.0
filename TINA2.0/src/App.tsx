@@ -10,7 +10,7 @@ type ChildrenProps = {
 
 const Container = ({ children }: ChildrenProps) => {
   return (
-    <div className="flex h-screen bg-bgLight text-text dark:bg-darkBgLight dark:text-darkText">
+    <div className="h-full bg-bgLight text-text dark:bg-darkBgLight dark:text-darkText">
       {children}
     </div>
   );
@@ -28,10 +28,11 @@ const ThemeHandler = ({ children }: ChildrenProps) => {
 function App() {
   return (
     <ThemeHandler>
-      <TopMenu />
       <Container>
-        <Menu />
-        <Main />
+        <div className="flex h-full w-full">
+          <Menu />
+          <Main />
+        </div>
       </Container>
     </ThemeHandler>
   );

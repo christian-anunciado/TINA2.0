@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Input from "../FAQ/Input/Input";
 import Introduction from "../Introduction/Introduction";
 import Responses from "../Responses/Responses";
+import TopMenu from "../TopMenu/TopMenu";
 
 type Props = {};
 
@@ -11,7 +12,9 @@ function Main({}: Props) {
   const count = conversation.count;
 
   return (
-    <div className="relative flex h-full flex-[7] flex-col bg-redLight text-white dark:bg-darkBgLight">
+    <div className="relative flex h-screen flex-[7] flex-col overflow-hidden bg-redLight text-white dark:bg-darkBgLight">
+      <TopMenu />
+
       {count === 0 ? (
         <Introduction />
       ) : (
