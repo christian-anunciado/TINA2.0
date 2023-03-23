@@ -3,6 +3,12 @@
 
 @tailwind base;
 
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
 *::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
