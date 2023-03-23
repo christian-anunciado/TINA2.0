@@ -4,13 +4,11 @@
 @tailwind base;
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   min-height: -webkit-fill-available;
+  height: stretch;
   margin: 0;
   padding: 0;
-}
-html {
-  height: -webkit-fill-available;
 }
 
 *::-webkit-scrollbar {
