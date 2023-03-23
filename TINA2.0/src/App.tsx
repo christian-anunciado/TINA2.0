@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
 import TopMenu from "./components/TopMenu/TopMenu";
-import Div100vh from "react-div-100vh";
 
 type ChildrenProps = {
   children: React.ReactNode;
@@ -28,16 +27,14 @@ const ThemeHandler = ({ children }: ChildrenProps) => {
 
 function App() {
   return (
-    <Div100vh>
-      <ThemeHandler>
-        <Container>
-          <div className="flex h-full w-full">
-            <Menu />
-            <Main />
-          </div>
-        </Container>
-      </ThemeHandler>
-    </Div100vh>
+    <ThemeHandler>
+      <Container>
+        <div className="flex h-full w-full">
+          <Menu />
+          <Main />
+        </div>
+      </Container>
+    </ThemeHandler>
   );
 }
 
