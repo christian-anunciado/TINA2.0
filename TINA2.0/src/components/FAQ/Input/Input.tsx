@@ -64,7 +64,7 @@ const InputQuery = ({}: Props) => {
       <input
         type="text"
         placeholder="Ask your questions here..."
-        className={`w-full bg-transparent focus:outline-none focus:ring-0 ${
+        className={`w-full bg-transparent placeholder:text-sm focus:outline-none focus:ring-0 md:placeholder:text-base ${
           loading && "cursor-not-allowed"
         }`}
         value={query}
@@ -98,8 +98,8 @@ function Input({}: Props) {
   return (
     <div className="relative w-full flex-1">
       <div className="absolute bottom-0 h-full w-full">
-        <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-          <div className="w-full py-2.5"></div>
+        <div className="flex w-full flex-col items-center justify-center gap-4 md:h-full">
+          <div className="hidden w-full py-2.5 md:block"></div>
           <InputQuery />
           <SubText />
         </div>
