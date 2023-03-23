@@ -5,7 +5,6 @@
 
 body {
   height: 100vh;
-  min-height: -webkit-fill-available;
   height: stretch;
   margin: 0;
   padding: 0;
