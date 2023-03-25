@@ -12,7 +12,7 @@ function Main({}: Props) {
   const count = conversation.count;
 
   return (
-    <div className="relative flex h-screen w-full flex-[7] flex-col overflow-hidden bg-redLight text-white dark:bg-darkBgLight">
+    <div className="relative flex h-[100svh] w-full flex-[7] flex-col overflow-hidden bg-redLight text-white dark:bg-darkBgLight">
       <TopMenu />
 
       {count === 0 ? (

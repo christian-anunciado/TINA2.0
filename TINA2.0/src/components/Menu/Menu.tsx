@@ -7,7 +7,7 @@ type Props = {};
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="hidden h-screen flex-[2] bg-gradient-to-b from-white to-goldLight px-3 drop-shadow-lg dark:bg-gradient-to-b dark:from-darkSoft dark:to-darkBgLighter md:block md:flex-[2] lg:block lg:flex-[2] xl:flex-[1.25]">
+    <div className="hidden h-[100svh] flex-[2] bg-gradient-to-b from-white to-goldLight px-3 drop-shadow-lg dark:bg-gradient-to-b dark:from-darkSoft dark:to-darkBgLighter md:block md:flex-[2] lg:block lg:flex-[2] xl:flex-[1.25]">
       {children}
     </div>
   );
