@@ -32,7 +32,7 @@ function Responses({ messages }: Props) {
 
   return (
     <div
-      className=" min-h-0 flex-[4] touch-pan-y snap-y overflow-auto scroll-smooth"
+      className=" min-h-0 flex-[4] shrink touch-pan-y snap-y overflow-auto scroll-smooth"
       ref={ref}
     >
       <div className="flex flex-col items-center gap-1">
