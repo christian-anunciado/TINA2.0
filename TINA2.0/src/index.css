@@ -6,8 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100dvh;
-  height: 100vh;
+  height: 100svh;
 }
 
 *::-webkit-scrollbar {
