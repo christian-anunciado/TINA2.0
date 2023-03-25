@@ -21,18 +21,18 @@ function Responses({ messages }: Props) {
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    ref.current?.scrollTo(0, ref.current.scrollHeight);
+  }, []);
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
     // scroll to bottom of div with smooth behavior
     ref.current?.scrollTo(0, ref.current.scrollHeight);
   }, [conversation.messages]);
 
-  useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-    ref.current?.scrollTo(0, ref.current.scrollHeight);
-  }, []);
-
   return (
     <div
-      className=" min-h-0 flex-[4] shrink touch-pan-y snap-y overflow-auto scroll-smooth"
+      className=" min-h-0 flex-[4] shrink snap-y overflow-auto scroll-smooth"
       ref={ref}
     >
       <div className="flex flex-col items-center gap-1">

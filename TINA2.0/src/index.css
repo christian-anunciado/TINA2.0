@@ -4,12 +4,9 @@
 @tailwind base;
 
 body {
-  height: -webkit-fill-available;
-  height: -moz-available;
-  height: fill-available;
   margin: 0;
   padding: 0;
-  height: stretch;
+  height: 100dvh;
   height: 100vh;
 }
 
@@ -61,6 +58,42 @@ body {
 
 .select-none {
   user-select: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @tailwind components;
