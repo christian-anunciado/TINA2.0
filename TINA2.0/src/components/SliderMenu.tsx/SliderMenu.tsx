@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FAQ from "../FAQ/FAQ";
 import Questions from "../FAQ/Questions";
 import Settings from "../Settings/Settings";
@@ -13,20 +13,49 @@ const Divider = () => {
 };
 
 function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
+  const [render, setRender] = React.useState(false);
+
+  const delay: number = 300;
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (toggleMenu && render) {
+      timeout = setTimeout(() => setToggleMenu(false), delay);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [toggleMenu, render]);
+
+  const setHidden = () => {
+    setRender(!render);
+  };
+
   return (
     <div
-      className="relative inset-0 z-50 text-text dark:text-darkText
-      md:hidden"
+      className={`relative inset-0 z-50 text-text dark:text-darkText md:hidden`}
       role="dialog"
       aria-modal="true"
       data-headlessui-state="open"
     >
-      <div className="fixed inset-0 bg-textSoft bg-opacity-75 opacity-100">
-        <div className="fixed inset-0 z-50 flex">
+      <div
+        className={`fixed inset-0 ${
+          render
+            ? "animate-[fade-out_300ms_forwards]"
+            : "animate-[fade-in_300ms_forwards]"
+        } bg-textSoft bg-opacity-75 transition-opacity duration-300`}
+      >
+        <div
+          className={`fixed inset-0 z-50 flex ${
+            render
+              ? "animate-[slide-right_300ms_forwards]"
+              : "animate-[slide-left_300ms_forwards]"
+          }`}
+        >
           <div className="relative flex w-full max-w-sm flex-1 translate-x-0 flex-col bg-gradient-to-b from-white to-goldLight dark:bg-gradient-to-b dark:from-darkSoft dark:to-darkBgLighter md:max-w-md">
             <div
-              className="absolute top-0 right-0 -mr-10 pt-2 opacity-100 md:-mr-12"
-              onClick={() => setToggleMenu(!toggleMenu)}
+              className="absolute top-0 right-0 -mr-10 bg-opacity-75 pt-2 opacity-100 md:-mr-12"
+              onClick={setHidden}
               id="headlessui-dialog-panel-:r2:"
               data-headlessui-state="open"
             >
@@ -34,7 +63,7 @@ function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
                 type="button"
                 className="ml-1 flex h-10 w-10 items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 tabIndex={0}
-                onClick={() => setToggleMenu(!toggleMenu)}
+                onClick={setHidden}
               >
                 <span className="sr-only">Close sidebar</span>
                 <svg
@@ -55,7 +84,13 @@ function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
               </button>
             </div>
             <div className="scrollbar-trigger flex h-full w-full flex-1 items-start border-white/20">
-              <div className="flex h-full flex-1 flex-col gap-2 space-y-1 p-2">
+              <div
+                className={`flex h-full flex-1 ${
+                  render
+                    ? "animate-[slide-right_300ms_forwards]"
+                    : "animate-[slide-left_300ms_forwards]"
+                } flex-col gap-2 space-y-1 p-2`}
+              >
                 <FAQ />
                 <Questions />
                 <Divider />
@@ -63,7 +98,7 @@ function SliderMenu({ setToggleMenu, toggleMenu }: Props) {
               </div>
             </div>
           </div>
-          <div className="w-14 flex-shrink-0"></div>
+          <div className="w-14 flex-shrink-0" onClick={setHidden}></div>
         </div>
       </div>
     </div>
