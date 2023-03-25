@@ -52,7 +52,7 @@ const HamburgerMenu = ({ setToggleMenu, toggleMenu }: HamburgerMenuProps) => {
 };
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div className="sticky top-0 z-30 h-[45px] w-full flex-none border-b border-b-divider bg-red text-white drop-shadow-md dark:border-b-darkTextSoft dark:bg-darkBgLighter dark:text-white md:hidden">
+  <div className="h-[45px] w-full shrink-0 border-b border-b-divider bg-red text-white drop-shadow-md dark:border-b-darkTextSoft dark:bg-darkBgLighter dark:text-white md:hidden">
     {children}
   </div>
 );
