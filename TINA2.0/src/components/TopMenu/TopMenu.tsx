@@ -32,7 +32,6 @@ const ToggleDarkMode = () => {
 
 const HamburgerMenu = ({ setToggleMenu, toggleMenu }: HamburgerMenuProps) => {
   const setHidden = () => {
-    console.log(document.body.style.overflow);
     if (document.body.style.overflow !== "hidden") {
       document.body.style.overflow = "hidden";
     } else {
