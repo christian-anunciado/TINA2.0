@@ -9,15 +9,13 @@ type Props = {
 };
 
 function Response({ response, error }: Props) {
-  const loading = response === "";
+  const index = response.indexOf("bit");
 
-  const properties = {
-    target: "_blank",
-    style: {
-      color: "blue",
-      fontWeight: "bold",
-    },
-  };
+  if (index !== -1) {
+    response = response.replace(/bit\.ly/g, "http://bit.ly");
+  }
+
+  const loading = response === "";
 
   return (
     <div className="flex w-full snap-end items-center justify-center bg-gold drop-shadow-lg dark:bg-darkSoft">
