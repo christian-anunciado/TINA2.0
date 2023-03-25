@@ -27,6 +27,7 @@ function Responses({ messages }: Props) {
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    ref.current?.scrollTo(0, ref.current.scrollHeight);
   }, []);
 
   return (
