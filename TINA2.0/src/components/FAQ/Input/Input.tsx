@@ -91,8 +91,8 @@ const SubText = ({}) => (
 
 function Input({}: Props) {
   return (
-    <div className="relative w-full flex-1">
-      <div className="flex h-full w-full flex-col justify-end gap-2 pb-4 lg:pb-6">
+    <div className="sticky bottom-0 w-full shrink-0">
+      <div className="flex h-full w-full flex-col justify-end gap-2 pb-4 pt-4 lg:pt-6 lg:pb-6">
         <div className="flex w-full flex-col items-center justify-center gap-4">
           <InputQuery />
         </div>
