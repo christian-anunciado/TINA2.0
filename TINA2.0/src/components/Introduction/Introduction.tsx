@@ -9,7 +9,7 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex h-screen flex-col items-center justify-center gap-4">
+  <div className="flex h-[100svh] flex-col items-center justify-center gap-4">
     {children}
   </div>
 );
