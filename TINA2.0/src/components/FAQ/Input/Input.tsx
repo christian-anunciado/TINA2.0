@@ -109,7 +109,7 @@ const SubText = ({}) => {
       Please report any incorrect responses. Your feedback is valuable to me as
       it helps me improve and provide better assistance in the future. Thank
       you!
-      <span className="px-1 font-medium underline">{`TINA version: ${deployedDate}`}</span>
+      <span className="pl-1.5 underline">{`TINA version: ${deployedDate}.`}</span>
     </div>
   );
 };
