@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MdSend } from "react-icons/md";
 import { useSelector } from "react-redux";
+import generate_response from "../../../api/response";
 import { queryContext } from "../../../context/queryContext";
 
 type Props = {};
@@ -81,13 +82,37 @@ const InputQuery = ({}: Props) => {
   );
 };
 
-const SubText = ({}) => (
-  <div className="block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
-    Please report any incorrect responses. Your feedback is valuable to me as it
-    helps me improve my responses and provide better assistance in the future.
-    Thank you!
-  </div>
-);
+const SubText = ({}) => {
+  type DateObj = {
+    deployed: string;
+  };
+  const [date, setDate] = useState<DateObj | null>(null);
+  let deployedDate: string = "";
+
+  useEffect(() => {
+    generate_response.get("/deployed").then((res) => {
+      setDate(res.data);
+    });
+  }, []);
+
+  const formatDateToMonthandDay = (date: string) => {
+    const dateObj = new Date(date);
+    const month = dateObj.toLocaleString("default", { month: "short" });
+    const day = dateObj.getDate();
+    return `${month} ${day}`;
+  };
+
+  if (date) deployedDate = formatDateToMonthandDay(date.deployed);
+
+  return (
+    <div className="block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
+      Please report any incorrect responses. Your feedback is valuable to me as
+      it helps me improve and provide better assistance in the future. Thank
+      you!
+      <span className="px-1 font-medium underline">{`TINA version: ${deployedDate}`}</span>
+    </div>
+  );
+};
 
 function Input({}: Props) {
   return (
