@@ -48,30 +48,14 @@ body {
 }
 
 .markdown a {
-  position: relative;
-  display: inline-block;
   color: blue;
   text-decoration: none;
   backface-visibility: hidden;
 }
 
-.markdown a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  padding: 0;
-  left: 0;
-  background-color: blue;
-  transform-origin: bottom right;
-  transition: transform 0.2s ease-out;
-}
-
-.markdown a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.markdown a:hover {
+  font-weight: 550;
+  text-decoration: underline;
 }
 
 .markdown table,
