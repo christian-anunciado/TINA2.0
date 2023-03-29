@@ -49,6 +49,7 @@ body {
 
 .markdown a {
   position: relative;
+  display: inline-block;
   color: blue;
   text-decoration: none;
   backface-visibility: hidden;
@@ -61,10 +62,11 @@ body {
   transform: scaleX(0);
   height: 1px;
   bottom: 0;
+  padding: 0;
   left: 0;
   background-color: blue;
   transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .markdown a:hover::after {

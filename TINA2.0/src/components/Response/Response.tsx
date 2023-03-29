@@ -9,9 +9,10 @@ type Props = {
 };
 
 function Response({ response, error }: Props) {
-  const index = response.indexOf("bit");
+  const bitIndex = response.indexOf("bit");
+  const httpIndex = response.indexOf("http");
 
-  if (index !== -1) {
+  if (bitIndex !== -1 && httpIndex === -1) {
     response = response.replace(/bit\.ly/g, "http://bit.ly");
   }
 
