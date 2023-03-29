@@ -50,11 +50,9 @@ body {
 .markdown a {
   color: blue;
   text-decoration: none;
-  backface-visibility: hidden;
 }
 
 .markdown a:hover {
-  font-weight: 550;
   text-decoration: underline;
 }
 
