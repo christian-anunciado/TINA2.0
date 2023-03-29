@@ -63,10 +63,15 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
         timeoutErrorMessage: "Request timed out",
       });
 
+      const txt: string = JSON.stringify(req.data.text);
+      console.log("🚀 ~ file: queryContext.tsx:67 ~ handleQuery ~ txt:", txt);
+
       const res: string = JSON.stringify(req.data.text)
         .replace(/\\r/g, "")
         .replace(/\\\\n/g, "\n")
+        .replace(/\\n/g, "\n")
         .replace(/"/g, "");
+      console.log("🚀 ~ file: queryContext.tsx:73 ~ handleQuery ~ res:", res);
 
       dispatch(
         appendResponse({

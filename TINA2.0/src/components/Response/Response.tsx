@@ -39,7 +39,7 @@ function Response({ response, error }: Props) {
         {!error && <img src={TINA} alt="" className="h-8 w-8 -scale-x-100" />}
 
         <div
-          className={`markdown prose flex w-[calc(100%-50px)] grow-0 flex-col justify-center break-words rounded-md rounded-tl-none text-[15px] lg:w-[calc(100%-100px)]
+          className={`markdown prose flex w-[calc(100%-50px)] grow-0 flex-col justify-center whitespace-pre-wrap break-words rounded-md rounded-tl-none text-[15px] lg:w-[calc(100%-100px)]
           ${
             error
               ? "text-redLight outline-2 outline-red"
