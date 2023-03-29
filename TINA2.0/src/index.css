@@ -48,11 +48,36 @@ body {
 }
 
 .markdown a {
+  position: relative;
   color: blue;
+  text-decoration: none;
+  backface-visibility: hidden;
 }
 
-.markdown a:hover {
-  font-weight: 600;
+.markdown a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: blue;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.markdown a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.markdown table,
+th,
+td {
+  border-bottom: 0.5px solid gray;
+  border-collapse: collapse;
+  padding: 0.5rem;
 }
 
 .select-none {
