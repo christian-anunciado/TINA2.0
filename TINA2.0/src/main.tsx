@@ -14,7 +14,7 @@ const PersistApp = () => {
   const onBeforeLift = () => {
     setTimeout(() => {
       setGateLifted(true);
-    }, 3000);
+    }, 2000);
   };
 
   return (
