@@ -1,4 +1,4 @@
-const parent = document.body;
+const parent = document.documentElement;
 
 if (
   localStorage.darkMode === "true" ||

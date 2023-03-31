@@ -10,11 +10,11 @@ function useThemeChange() {
     localStorage.setItem("darkMode", theme.toString());
 
     if (theme) {
-      if (!document.body.classList.contains("dark"))
-        document.body.classList.add("dark");
+      if (!document.documentElement.classList.contains("dark"))
+        document.documentElement.classList.add("dark");
     } else {
-      if (document.body.classList.contains("dark"))
-        document.body.classList.remove("dark");
+      if (document.documentElement.classList.contains("dark"))
+        document.documentElement.classList.remove("dark");
     }
   }, [theme]);
 }
