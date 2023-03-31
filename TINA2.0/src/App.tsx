@@ -1,5 +1,6 @@
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
+import useThemeChange from "./hooks/useThemeChange";
 
 type ChildrenProps = {
   children: React.ReactNode;
@@ -14,6 +15,8 @@ const Container = ({ children }: ChildrenProps) => {
 };
 
 function App() {
+  useThemeChange();
+
   return (
     <Container>
       <div className="flex h-full w-full">
