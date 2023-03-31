@@ -5,9 +5,11 @@ if (
   (!("darkMode" in localStorage) &&
     window.matchMedia("(prefers-color-scheme: dark)").matches)
 ) {
-  parent.classList.add("dark");
+  if (!parent.classList.contains("dark"))
+    parent.classList.add("dark");
 } else {
-  parent.classList.remove("dark");
+  if (parent.classList.contains("dark"))
+    parent.classList.remove("dark");
 }
 
 
