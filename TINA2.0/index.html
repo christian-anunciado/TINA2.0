@@ -6,10 +6,22 @@
   <link rel="icon" type="image/svg+xml" href="./src/assets/avatars/tinaAvatar.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teknoy INquiry Assistant</title>
+  <!-- add index.css -->
+  <link rel="stylesheet" href="/src/index.css" />
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="loading-parent">
+
+      <div class="flex h-[100svh] items-center justify-center bg-gold dark:bg-darkBgLight">
+        <img src="./src/assets/img/CITLogo.png" class="h-20 w-20 animate-pulse md:h-24 md:w-24 lg:h-28 lg:w-28"
+          alt="" />
+      </div>
+
+    </div>
+  </div>
+  <script src="./handlingTheme.js" type=""></script>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
