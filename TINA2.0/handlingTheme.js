@@ -1,4 +1,4 @@
-const parent = document.getElementById("loading-parent");
+const parent = document.body;
 
 if (
   localStorage.darkMode === "true" ||

@@ -31,10 +31,7 @@ function Responses({ messages }: Props) {
   }, [conversation.messages]);
 
   return (
-    <div
-      className=" min-h-0 flex-[4] shrink snap-y overflow-auto scroll-smooth"
-      ref={ref}
-    >
+    <div className="min-h-0 flex-[4] overflow-auto scroll-smooth" ref={ref}>
       <div className="flex flex-col items-center gap-1">
         {messages.map((message, index) => {
           if (message.type === MessageType.Query)

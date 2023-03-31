@@ -17,6 +17,12 @@ const themeSlice = createSlice({
     toggleDarkMode(state) {
       state.darkMode = !state.darkMode;
       localStorage.setItem("darkMode", state.darkMode.toString());
+
+      if (state.darkMode) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
     },
   },
 });

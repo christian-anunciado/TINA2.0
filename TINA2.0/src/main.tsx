@@ -9,23 +9,11 @@ import "./index.css";
 import { persistor, store } from "./redux/store";
 
 const PersistApp = () => {
-  const [gateLifted, setGateLifted] = React.useState(false);
-
-  const onBeforeLift = () => {
-    setTimeout(() => {
-      setGateLifted(true);
-    }, 2000);
-  };
-
   return (
     <Provider store={store}>
       <QueryProvider>
-        <PersistGate
-          persistor={persistor}
-          loading={<Loading />}
-          onBeforeLift={onBeforeLift}
-        >
-          {gateLifted ? <App /> : <Loading />}
+        <PersistGate persistor={persistor} loading={<Loading />}>
+          <App />
         </PersistGate>
       </QueryProvider>
     </Provider>
