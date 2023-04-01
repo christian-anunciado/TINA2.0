@@ -5,8 +5,6 @@ function useThemeChange() {
   const theme = useSelector((state: any) => state.theme.darkMode);
 
   useEffect(() => {
-    console.log("theme changed");
-
     localStorage.setItem("darkMode", theme.toString());
 
     if (theme) {
