@@ -16,14 +16,14 @@
 
 <body>
   <div id="root">
-    <div id="loading-parent">
 
-      <div class="flex h-[100svh] items-center justify-center bg-gold dark:bg-darkBgLight">
-        <img src="./src/assets/img/CITLogo.png" class="h-20 w-20 animate-pulse md:h-24 md:w-24 lg:h-28 lg:w-28"
-          alt="" />
-      </div>
-
+    <div class="flex h-[100svh] flex-col items-center justify-center gap-3 bg-gold dark:bg-darkBgLight lg:gap-4">
+      <img src="./src/assets/img/CITLogo.png" class="h-20 w-20 animate-pulse md:h-24 md:w-24 lg:h-28 lg:w-28" alt="" />
+      <span class="font-medium text-darkSoft dark:text-divider animate-pulse text-sm lg:text-base">
+        Loading... please wait.
+      </span>
     </div>
+
   </div>
   <script type="module" src="/src/main.tsx" defer></script>
 </body>
