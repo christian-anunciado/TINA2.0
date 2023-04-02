@@ -1,5 +1,6 @@
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
+import useOnPageReload from "./hooks/useOnPageReload";
 import useThemeChange from "./hooks/useThemeChange";
 
 type ChildrenProps = {
@@ -16,7 +17,7 @@ const Container = ({ children }: ChildrenProps) => {
 
 function App() {
   useThemeChange();
-
+  useOnPageReload();
   return (
     <Container>
       <div className="flex h-full w-full">
