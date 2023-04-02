@@ -50,10 +50,15 @@ module.exports = {
       soft: '#f3f3f3',
 
       // Primary
+      primaryGold: '#f8c400',
+      primaryLightGold: '#ffdf16',
+
+
+      // red: '#8c383e',
       red: '#791b1b',
-      // redLight: '#A84448',
-      // redLight: '#771b1a',
-      redLight: '#8a343b',
+      redLight: '#8c383e',
+      // redLight: '#8a343b',
+
       gold: '#e7ae4d',
       goldLight: '#E4C988',
 
