@@ -24,7 +24,7 @@ function Response({ response, error }: Props) {
         className={`group flex w-[80%] md:w-[60%] xl:w-[48%] ${
           loading ? "items-center" : null
         } ${
-          loading ? "gap-4" : "gap-6"
+          loading ? "gap-3 lg:gap-4" : "gap-6"
         } justify-center whitespace-pre-wrap pt-6 pb-10 text-sm md:text-base`}
       >
         {error && (
@@ -48,7 +48,7 @@ function Response({ response, error }: Props) {
           }
           ${
             !loading &&
-            "bg-[#f6e5e6] p-2.5 px-3 pb-3.5 outline dark:bg-darkTextSoft"
+            "bg-[#f6e5e6] p-2.5 pl-3 pr-2 pb-3.5 outline dark:bg-darkTextSoft"
           }
           `}
         >
