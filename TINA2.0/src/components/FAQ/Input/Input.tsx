@@ -98,7 +98,7 @@ const SubText = ({}) => {
   const formatDateToMonthandDay = (date: string) => {
     const dateObj = new Date(date.replace(/-/g, "/"));
     const month = dateObj.toLocaleString("default", { month: "short" });
-    const day = dateObj.getDate();
+    const day = dateObj.toLocaleString("default", { day: "2-digit" });
     return `${month} ${day}`;
   };
 
