@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MdSend } from "react-icons/md";
 import { useSelector } from "react-redux";
-import generate_response from "../../../api/response";
-import { queryContext } from "../../../context/queryContext";
+import generate_response from "../../api/response";
+import { queryContext } from "../../context/queryContext";
 
 type Props = {};
 
