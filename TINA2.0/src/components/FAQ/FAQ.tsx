@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Dropdown from "./Dropdown";
-import Questions from "./Questions";
+import { QuestionType, QuestionsContext } from "../../context/questionsContext";
 
 type Props = {};
 
@@ -23,23 +23,16 @@ const Header = () => {
 };
 
 function FAQ({}: Props) {
-  const [selected, setSelected] = React.useState("General");
-  const options = [
-    "General",
-    "Account",
-    "Billing",
-    "Payments",
-    "Request",
-    "Support",
-  ];
+  const questionsContext = React.useContext(QuestionsContext);
+  const options = Object.values(QuestionType);
+
   return (
     <Wrapper>
       <Header />
       <Dropdown
         options={options}
-        selected={selected}
-        handler={setSelected}
-        disabled={true}
+        selected={questionsContext.questionType}
+        handler={questionsContext.setQuestionType}
       />
     </Wrapper>
   );

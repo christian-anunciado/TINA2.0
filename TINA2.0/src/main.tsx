@@ -7,6 +7,7 @@ import Loading from "./components/Loading/Loading";
 import { QueryProvider } from "./context/queryContext";
 import "./index.css";
 import { persistor, store } from "./redux/store";
+import QuestionsProvider from "./context/questionsContext";
 
 const PersistApp = () => {
   const [gateLifted, setGateLifted] = React.useState(false);
@@ -20,13 +21,15 @@ const PersistApp = () => {
   return (
     <Provider store={store}>
       <QueryProvider>
-        <PersistGate
-          persistor={persistor}
-          loading={<Loading />}
-          onBeforeLift={onBeforeLift}
-        >
-          {gateLifted ? <App /> : <Loading />}
-        </PersistGate>
+        <QuestionsProvider>
+          <PersistGate
+            persistor={persistor}
+            loading={<Loading />}
+            onBeforeLift={onBeforeLift}
+          >
+            {gateLifted ? <App /> : <Loading />}
+          </PersistGate>
+        </QuestionsProvider>
       </QueryProvider>
     </Provider>
   );
