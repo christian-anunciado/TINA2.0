@@ -27,7 +27,7 @@ const Option = (props: OptionProps) => {
     <div
       className={`${
         props.disabled && "pointer-events-none opacity-50"
-      } flex h-[46px] w-[244px] cursor-pointer items-center px-4 text-sm hover:bg-darkDivider dark:hover:bg-darkTextSoft md:text-base`}
+      } flex h-[46px] w-[97%] cursor-pointer items-center rounded-xl px-4 text-sm hover:bg-darkDivider dark:hover:bg-darkTextSoft`}
       onClick={() => props.handler?.(props.option)}
     >
       {props.option}
@@ -37,7 +37,7 @@ const Option = (props: OptionProps) => {
 
 const Options = (props: DropdownProps) => {
   return (
-    <div className="flex flex-col rounded-lg bg-darkBgLighter py-2 text-darkText dark:bg-white dark:text-text">
+    <div className="flex w-full flex-col items-center justify-center rounded-lg bg-darkBgLighter py-2 text-darkText dark:bg-white dark:text-text">
       {props.options.map((option) => {
         return (
           <Option
@@ -69,7 +69,7 @@ function Dropdown({ options, handler, selected, disabled }: Props) {
       }`}
     >
       <button
-        className="flex h-[46px] items-center justify-between rounded-xl border border-darkTextSoft px-4 text-sm font-medium dark:hover:bg-darkSoft"
+        className="flex h-[46px] items-center justify-between rounded-xl border border-darkTextSoft px-4 text-sm font-medium hover:bg-divider dark:hover:bg-darkDivider"
         onClick={() => setIsOpen(!isOpen)}
         ref={containerRef}
       >
@@ -77,7 +77,7 @@ function Dropdown({ options, handler, selected, disabled }: Props) {
         <MdKeyboardArrowDown />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 z-10" ref={dropDownRef}>
+        <div className="absolute top-full left-0 z-10 w-full" ref={dropDownRef}>
           {
             <Options
               options={options}
