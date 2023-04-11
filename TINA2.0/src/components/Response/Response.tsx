@@ -43,12 +43,12 @@ function Response({ response, error }: Props) {
           className={`markdown prose flex w-[calc(100%-50px)] grow-0 flex-col justify-center whitespace-pre-wrap break-words rounded-md rounded-tl-none text-[15px] lg:w-[calc(100%-100px)]
           ${
             error
-              ? "text-redLight outline-2 outline-red"
-              : "text-darkBgLight outline-1 outline-darkDivider dark:text-text dark:outline-darkBgLighter"
+              ? "text-red outline-2 outline-red transition-none"
+              : "text-darkBgLight outline-1 outline-darkDivider dark:text-text dark:outline-darkBgLighter md:text-justify"
           }
           ${
             !loading &&
-            "bg-[#f6e5e6] p-2.5 pl-3 pr-3 pb-3.5 outline dark:bg-darkTextSoft md:text-justify"
+            "bg-[#f6e5e6] p-2.5 pl-3 pr-3 pb-3.5 outline dark:bg-darkTextSoft"
           }
           `}
         >
