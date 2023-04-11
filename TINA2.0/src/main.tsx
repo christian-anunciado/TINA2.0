@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import App from "./App";
+import { router } from "./App";
 import Loading from "./components/Loading/Loading";
 import { QueryProvider } from "./context/queryContext";
 import "./index.css";
 import { persistor, store } from "./redux/store";
 import QuestionsProvider from "./context/questionsContext";
+import { RouterProvider } from "react-router-dom";
 
 const PersistApp = () => {
   const [gateLifted, setGateLifted] = React.useState(false);
@@ -27,7 +28,7 @@ const PersistApp = () => {
             loading={<Loading />}
             onBeforeLift={onBeforeLift}
           >
-            {gateLifted ? <App /> : <Loading />}
+            {gateLifted ? <RouterProvider router={router} /> : <Loading />}
           </PersistGate>
         </QuestionsProvider>
       </QueryProvider>

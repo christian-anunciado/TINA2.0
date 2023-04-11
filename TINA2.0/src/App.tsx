@@ -1,3 +1,4 @@
+import { createBrowserRouter } from "react-router-dom";
 import AddQuestion from "./components/Admin/AddQuestion";
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
@@ -20,21 +21,28 @@ const Container = ({ children }: ChildrenProps) => {
 function App() {
   useThemeChange();
   useOnPageReload();
-  if (window.location.pathname === "/admin/add-question") {
-    return <AddQuestion />;
-  }
-  if (window.location.pathname === "/") {
-    return (
-      <Container>
-        <div className="flex h-full w-full">
-          <Menu />
-          <Main />
-        </div>
-      </Container>
-    );
-  }
 
-  return <NotFound />;
+  return (
+    <Container>
+      <div className="flex h-full w-full">
+        <Menu />
+        <Main />
+      </div>
+    </Container>
+  );
 }
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/admin/add-question",
+    element: <AddQuestion />,
+    errorElement: <NotFound />,
+  },
+]);
 
 export default App;
