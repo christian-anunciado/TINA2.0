@@ -5,6 +5,8 @@ import Menu from "./components/Menu/Menu";
 import NotFound from "./components/NotFound/NotFound";
 import useOnPageReload from "./hooks/useOnPageReload";
 import useThemeChange from "./hooks/useThemeChange";
+import ModalTest from "./components/Modals/SurveyModal";
+import SurveyModal from "./components/Modals/SurveyModal";
 
 type ChildrenProps = {
   children: React.ReactNode;
@@ -28,6 +30,7 @@ function App() {
         <Menu />
         <Main />
       </div>
+      <SurveyModal />
     </Container>
   );
 }
@@ -41,6 +44,11 @@ export const router = createBrowserRouter([
   {
     path: "/admin/add-question",
     element: <AddQuestion />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/modal",
+    element: <ModalTest />,
     errorElement: <NotFound />,
   },
 ]);

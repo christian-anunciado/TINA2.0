@@ -3,6 +3,7 @@ import { MdSend } from "react-icons/md";
 import { useSelector } from "react-redux";
 import generate_response from "../../api/response";
 import { queryContext } from "../../context/queryContext";
+import SurveyButton from "../FloatingButton/SurveyButton";
 
 type Props = {};
 
@@ -123,8 +124,9 @@ function Input({}: Props) {
           loading && "opacity-50"
         }`}
       >
-        <div className="flex w-full flex-col items-center justify-center gap-4">
+        <div className="relative flex w-full items-center justify-center gap-4">
           <InputQuery />
+          <SurveyButton />
         </div>
         <SubText />
       </div>
