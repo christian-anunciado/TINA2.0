@@ -8,7 +8,7 @@ function NotFound({}: Props) {
       <div className="flex h-full items-center justify-center">
         <img
           src={PageNotFound}
-          className="pointer-events-none h-1/2 w-1/2"
+          className="pointer-events-none h-2/6 w-2/6"
           alt=""
         />
       </div>
