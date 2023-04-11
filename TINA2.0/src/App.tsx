@@ -1,6 +1,7 @@
 import AddQuestion from "./components/Admin/AddQuestion";
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
+import NotFound from "./components/NotFound/NotFound";
 import useOnPageReload from "./hooks/useOnPageReload";
 import useThemeChange from "./hooks/useThemeChange";
 
@@ -22,7 +23,7 @@ function App() {
   if (window.location.pathname === "/admin/add-question") {
     return <AddQuestion />;
   }
-  if (window.location.pathname === "/")
+  if (window.location.pathname === "/") {
     return (
       <Container>
         <div className="flex h-full w-full">
@@ -31,6 +32,9 @@ function App() {
         </div>
       </Container>
     );
+  }
+
+  return <NotFound />;
 }
 
 export default App;
