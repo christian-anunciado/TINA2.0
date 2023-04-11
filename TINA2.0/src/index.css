@@ -55,6 +55,8 @@ body {
 .markdown a {
   color: blue;
   text-decoration: none;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .markdown a:hover {
