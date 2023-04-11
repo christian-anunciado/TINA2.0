@@ -1,3 +1,4 @@
+import AddQuestion from "./components/Admin/AddQuestion";
 import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
 import useOnPageReload from "./hooks/useOnPageReload";
@@ -18,14 +19,18 @@ const Container = ({ children }: ChildrenProps) => {
 function App() {
   useThemeChange();
   useOnPageReload();
-  return (
-    <Container>
-      <div className="flex h-full w-full">
-        <Menu />
-        <Main />
-      </div>
-    </Container>
-  );
+  if (window.location.pathname === "/admin/add-question") {
+    return <AddQuestion />;
+  }
+  if (window.location.pathname === "/")
+    return (
+      <Container>
+        <div className="flex h-full w-full">
+          <Menu />
+          <Main />
+        </div>
+      </Container>
+    );
 }
 
 export default App;

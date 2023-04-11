@@ -44,7 +44,7 @@ function Response({ response, error }: Props) {
           ${
             error
               ? "text-red outline-2 outline-red transition-none"
-              : "text-darkBgLight outline-1 outline-darkDivider dark:text-text dark:outline-darkBgLighter md:text-justify"
+              : "text-darkBgLight outline-1 outline-darkDivider dark:text-text dark:outline-darkBgLighter"
           }
           ${
             !loading &&

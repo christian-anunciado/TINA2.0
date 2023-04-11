@@ -26,45 +26,46 @@ module.exports = {
   theme: {
     fontFamily: fontFamily,
 
-    colors: {
-      transparent: 'transparent',
-      white: '#fff',
-      blueBorder: '#3ea6ff',
-      blueSoft: '#def1ff',
-      darkBlueSoft: '#263850',
-      divider: '#ebebeb',
-      darkDivider: '#333333',
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        white: '#fff',
+        blueBorder: '#3ea6ff',
+        blueSoft: '#def1ff',
+        darkBlueSoft: '#263850',
+        divider: '#ebebeb',
+        darkDivider: '#333333',
 
-      // Dark
-      darkBgLight: '#212529',
-      darkBgLighter: '#202123',
-      darkText: 'white',
-      darkTextSoft: '#aaa',
-      darkSoft: '#33383f',
+        // Dark
+        darkBgLight: '#212529',
+        darkBgLighter: '#202123',
+        darkText: 'white',
+        darkTextSoft: '#aaa',
+        darkSoft: '#33383f',
 
-      // Light
-      bgLight: '#f9f9f9',
-      bgLighter: 'white',
-      text: 'black',
-      textSoft: '#606060',
-      soft: '#f3f3f3',
+        // Light
+        bgLight: '#f9f9f9',
+        bgLighter: 'white',
+        text: 'black',
+        textSoft: '#606060',
+        soft: '#f3f3f3',
 
-      // Primary
-      primaryGold: '#f8c400',
-      primaryLightGold: '#ffdf16',
-
-
-      // red: '#8c383e',
-      red: '#791b1b',
-      redLight: '#8c383e',
-      // redLight: '#8a343b',
-
-      gold: '#e7ae4d',
-      goldLight: '#E4C988',
+        // Primary
+        primaryGold: '#f8c400',
+        primaryLightGold: '#ffdf16',
 
 
+        // red: '#8c383e',
+        red: '#791b1b',
+        redLight: '#8c383e',
+        // redLight: '#8a343b',
+
+        gold: '#e7ae4d',
+        goldLight: '#E4C988',
+
+
+      },
     },
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
