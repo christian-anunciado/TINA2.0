@@ -9,6 +9,11 @@ body {
   height: 100svh;
 }
 
+* {
+  transition: all 250ms ease-out;
+  transition-property: background-color, color;
+}
+
 *::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
