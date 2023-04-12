@@ -69,13 +69,18 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
       const res: string = JSON.stringify(req.data.text)
         .replace(/\\r/g, "")
         .replace(/\\\\n/g, "\n")
-        .replace(/\\n/g, "\n")
-        .replace(/"/g, "");
-      console.log("🚀 ~ file: queryContext.tsx:73 ~ handleQuery ~ res:", res);
+        .replace(/\\n/g, "\n");
+
+      let firstIndex = res.indexOf('"');
+      let lastIndex = res.lastIndexOf('"');
+      let response =
+        res.substring(0, firstIndex) +
+        res.substring(firstIndex + 1, lastIndex) +
+        res.substring(lastIndex + 1);
 
       dispatch(
         appendResponse({
-          text: res,
+          text: response,
           created: new Date().toUTCString(),
           type: MessageType.Response,
         })
