@@ -19,36 +19,39 @@ function Response({ response, error }: Props) {
   const loading = response === "";
 
   return (
-    <div className="flex w-full items-center justify-center bg-gold drop-shadow-lg dark:bg-darkSoft">
+    <div className="flex w-full items-center justify-center drop-shadow-lg">
       <div
         className={`group flex w-[80%] md:w-[60%] xl:w-[48%] ${
           loading ? "items-center" : null
         } ${
           loading ? "gap-3 lg:gap-4" : "gap-6"
-        } justify-center whitespace-pre-wrap pt-6 pb-10 text-sm md:text-base`}
+        } flex-row-reverse justify-start whitespace-pre-wrap pt-6 pb-10 text-sm md:text-base`}
       >
         {error && (
-          <div className="relative flex h-8 shrink-0 justify-start">
-            <img src={TINA} alt="" className="h-8 w-8 -scale-x-100" />
+          <div className="relative flex h-8 shrink-0 justify-start md:mr-4 lg:mr-5">
+            <img src={TINA} alt="" className="h-8 w-8" />
             <MdErrorOutline
-              className="absolute -bottom-0.5 -right-1 rounded-full bg-red"
+              className="absolute -left-0.5 -bottom-0.5 rounded-full bg-red shadow-none drop-shadow-none"
               size={"1em"}
             />
           </div>
         )}
 
-        {!error && <img src={TINA} alt="" className="h-8 w-8 -scale-x-100" />}
+        {!error && (
+          <img src={TINA} alt="" className="h-8 w-8 md:mr-4 lg:mr-5" />
+        )}
 
         <div
-          className={`markdown prose flex w-[calc(100%-50px)] grow-0 flex-col justify-center whitespace-pre-wrap break-words rounded-md rounded-tl-none text-[15px] lg:w-[calc(100%-100px)]
+          className={`markdown prose flex max-w-[calc(100%-50px)] grow-0 flex-col justify-center whitespace-pre-wrap break-words rounded-md rounded-tr-none text-[15px] lg:max-w-[calc(100%-100px)]
           ${
             error
               ? "text-red outline-2 outline-red transition-none"
               : "text-darkBgLight outline-1 outline-darkDivider dark:text-text dark:outline-darkBgLighter"
           }
           ${
-            !loading &&
-            "bg-[#f6e5e6] p-2.5 pl-3 pr-3 pb-3.5 outline dark:bg-darkTextSoft"
+            loading
+              ? "items-end"
+              : "bg-[#f6e5e6] p-2.5 pl-3 pr-3 pb-3.5 outline dark:bg-darkTextSoft"
           }
           `}
         >

@@ -54,7 +54,7 @@ const InputQuery = ({}: Props) => {
 
   return (
     <div
-      className={`flex w-[75%] items-center justify-between rounded-lg bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg dark:bg-darkSoft dark:text-darkText md:w-[65%] xl:w-[50%] ${
+      className={`flex w-[75%] items-center justify-between rounded-full bg-bgLighter px-4 py-3.5 text-text drop-shadow-lg md:w-[65%] xl:w-[50%] ${
         loading && "cursor-not-allowed"
       }`}
     >
@@ -118,7 +118,9 @@ const SubText = ({}) => {
 function Input({}: Props) {
   const loading = useSelector((state: any) => state.conversation.loading);
   return (
-    <div className={`shrink-0" w-full`}>
+    <div
+      className={`shrink-0" w-full border-t border-t-gray-300 bg-gradient-to-t from-red to-redLight dark:border-t-gray-500 dark:from-darkBgLighter dark:to-darkBgLight`}
+    >
       <div
         className={`flex h-full w-full flex-col justify-end gap-2 pb-4 pt-4 lg:pt-6 lg:pb-6 ${
           loading && "opacity-50"
