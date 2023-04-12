@@ -119,7 +119,7 @@ function Input({}: Props) {
   const loading = useSelector((state: any) => state.conversation.loading);
   return (
     <div
-      className={`shrink-0" w-full border-t border-t-gray-300 bg-redLight dark:border-t-gray-500 dark:from-darkBgLighter dark:to-darkBgLight`}
+      className={`shrink-0" w-full border-t border-t-gray-300 bg-redLight dark:border-t-gray-500 dark:bg-gradient-to-t dark:from-darkBgLighter dark:to-darkBgLight`}
     >
       <div
         className={`flex h-full w-full flex-col justify-end gap-2 pb-4 pt-4 lg:pt-6 lg:pb-6 ${
