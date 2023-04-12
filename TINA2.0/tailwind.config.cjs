@@ -66,7 +66,7 @@ module.exports = {
 
       },
       backgroundImage: {
-        'cit-pattern': "url('public/CITLogo.png')",
+        'cit-pattern': "url('/CITLogo.png')",
       }
     },
   },
