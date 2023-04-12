@@ -42,7 +42,7 @@ const Infos = ({ infos }: { infos: string[] }) => (
 );
 
 const Example = () => (
-  <div className="italic text-darkTextSoft dark:text-darkTextSoft md:text-sm">
+  <div className="italic text-white dark:text-darkTextSoft md:text-sm">
     Try asking: <span className="font-medium">"When is the enrollment?"</span>
   </div>
 );
