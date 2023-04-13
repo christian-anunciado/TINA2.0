@@ -55,7 +55,7 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
     if (query.length === 0) return;
     initQuery(query);
     try {
-      const req = await generate_response.get("/response/ask_tina", {
+      const req = await generate_response.get("/response/chat_tina", {
         params: {
           question: query,
         },
