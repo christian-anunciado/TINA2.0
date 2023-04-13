@@ -107,9 +107,12 @@ const SubText = ({}) => {
 
   return (
     <div className="block px-8 text-center text-[9px] text-darkTextSoft md:px-6 md:text-[10px] lg:text-xs">
-      Please report any incorrect responses. Your feedback is valuable to me as
+      {/* Please report any incorrect responses. Your feedback is valuable to me as
       it helps me improve and provide better assistance in the future. Thank
-      you!
+      you! */}
+      TINA is still in development, and while we strive for accuracy, there may
+      be times when it produces incomplete or inaccurate responses. Thank you
+      for understanding!
       <span className="pl-1.5 underline">{`TINA version: ${deployedDate}.`}</span>
     </div>
   );
