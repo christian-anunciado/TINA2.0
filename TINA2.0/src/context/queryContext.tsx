@@ -88,7 +88,7 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
     } catch (error) {
       dispatch(
         appendResponse({
-          text: "Sorry, something went wrong. Please try again later.",
+          text: "I'm sorry, it seems that I was not able to process your request properly. There seems to be an issue with the system at the moment, which is preventing me from processing your request. Could you please try asking again? Thank you.",
           created: new Date().toUTCString(),
           type: MessageType.Response,
           error: true,
