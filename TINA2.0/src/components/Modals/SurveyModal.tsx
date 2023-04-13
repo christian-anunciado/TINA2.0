@@ -9,7 +9,7 @@ function SurveyModal({}: Props) {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-40 h-full w-full bg-gray-700 bg-opacity-50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-40 h-[100svh] w-full bg-gray-700 bg-opacity-50 backdrop-blur-sm">
           <dialog
             id="myModal"
             className="fixed inset-0 z-50 h-fit w-11/12 rounded-md p-5 backdrop-blur-sm backdrop-opacity-50 backdrop:bg-red md:w-1/2"
@@ -44,7 +44,7 @@ function SurveyModal({}: Props) {
                   </svg>
                 </div>
               </div>
-              <div className="prose-base flex h-auto w-full flex-col items-center justify-center gap-6 rounded bg-gray-200 py-10 px-4 text-gray-500">
+              <div className="prose-base flex min-h-0 w-full flex-col items-center justify-center gap-6 overflow-auto rounded bg-gray-200 py-10 px-4 text-gray-500">
                 We're currently in the development stage, and we'd love for you
                 to try out our latest creation. TINA 2.0 is designed to make
                 your school life easier by answering your questions, providing
