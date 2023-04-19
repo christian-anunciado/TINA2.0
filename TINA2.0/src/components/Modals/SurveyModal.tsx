@@ -12,7 +12,7 @@ function SurveyModal({}: Props) {
         <div className="fixed inset-0 z-40 h-[100svh] w-full bg-gray-700 bg-opacity-50 backdrop-blur-sm">
           <dialog
             id="myModal"
-            className="fixed inset-0 z-50 h-fit w-11/12 rounded-md p-5 backdrop-blur-sm backdrop-opacity-50 backdrop:bg-red md:w-1/2"
+            className="fixed inset-0 z-50 h-3/5 w-11/12 overflow-auto rounded-md p-5 backdrop-blur-sm backdrop-opacity-50 backdrop:bg-red md:h-fit md:w-1/2"
             open={isOpen}
           >
             <div className="flex h-auto w-full flex-col items-center justify-center">
@@ -55,7 +55,7 @@ function SurveyModal({}: Props) {
                   know what you think. Your input will help us improve TINA 2.0
                   and make it even more helpful for all students.
                 </span>
-                <span className="inline-flex items-center gap-4">
+                <span className="inline-flex flex-col items-start gap-4 md:flex-row md:items-center">
                   The survey button:
                   <SurveyButton />
                   can be found next to question input.

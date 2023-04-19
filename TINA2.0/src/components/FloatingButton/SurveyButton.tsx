@@ -5,7 +5,7 @@ type Props = {};
 
 function SurveyButton({}: Props) {
   return (
-    <div className="flex w-fit">
+    <div className="flex w-fit self-center md:self-start">
       <a
         href="https://forms.gle/P33f7fUEHuKmdSk97"
         target="_blank"
