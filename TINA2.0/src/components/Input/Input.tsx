@@ -129,7 +129,7 @@ function Input({}: Props) {
           loading && "opacity-50"
         }`}
       >
-        <div className="relative flex w-full items-center justify-center gap-4">
+        <div className="relative flex w-full items-center justify-center gap-4 px-2 md:px-0">
           <InputQuery />
           <SurveyButton />
         </div>
